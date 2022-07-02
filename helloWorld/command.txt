@@ -1,0 +1,17 @@
+docker version
+
+docker build -t hello-docker .
+docker run hello-docker
+
+#upload
+
+docker login
+docker tag hello-docker liwk/hello-docker
+docker push liwk/hello-docker
+
+#download and run
+docker rmi -f liwk/hello-docker
+docker rmi -f hello-docker
+docker pull liwk/hello-docker
+docker run liwk/hello-docker
+

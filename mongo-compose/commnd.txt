@@ -1,0 +1,12 @@
+docker-compose -f compose.yaml up -d
+
+
+#down
+docker-compose -f compose.yaml down
+
+
+
+#debuf
+docker exec -it mongo-compose_mongo_1 /bin/sh
+
+
