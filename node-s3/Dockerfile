@@ -7,10 +7,6 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
 # 安装最新版 Chromium(89) 的包
 RUN apk add --no-cache \
       chromium \
