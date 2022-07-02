@@ -3,8 +3,10 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({args: ['--no-sandbox']});
   const page = await browser.newPage();
-  await page.goto('https://vsupalov.com');
-  await page.screenshot({path: '/app/output/example.png'});
+  await page.goto('https://www.thesaurus.com/browse/smart')
+  var element = await page.waitForSelector("#meanings > div.css-ixatld.e15rdun50 > ul > li:nth-child(1) > a")
+  var text = await page.evaluate(element => element.textContent, element)
+  console.log(text)
 
   await browser.close();
 })();
