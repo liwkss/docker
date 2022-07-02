@@ -9,7 +9,7 @@ const webScraper = async () => {
    if (i <= 3) {
      data.push({
        title: $(elem).text(),
-       link: $(elem).find('a.storylink').attr('href')
+       link: $(elem).find('a.titlelink').attr('href')
        })
      }
 });
