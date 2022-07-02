@@ -1,7 +1,10 @@
 const puppeteer = require('puppeteer')
 
 async function scrape() {
-   const browser = await puppeteer.launch({})
+   const browser = await puppeteer.launch({
+	  executablePath: '/usr/bin/google-chrome',
+	  args: [...] // if we need them.
+	});
    const page = await browser.newPage()
 
    await page.goto('https://www.thesaurus.com/browse/smart')
