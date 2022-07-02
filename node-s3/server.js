@@ -1,13 +1,15 @@
 const puppeteer = require('puppeteer')
 
 async function scrape() {
-   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']})
+   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage']})
    const page = await browser.newPage()
 
    await page.goto('https://www.thesaurus.com/browse/smart')
-   var element = await page.waitForSelector("#meanings > div.css-ixatld.e15rdun50 > ul > li:nth-child(1) > a")
-   var text = await page.evaluate(element => element.textContent, element)
-   console.log(text)
+   for(i = 1; i < 6; i++){
+    var element = await page.waitForSelector("#meanings > div.css-ixatld.e15rdun50 > ul > li:nth-child(" + i + ") > a")
+    var text = await page.evaluate(element => element.textContent, element)
+    console.log(text)
+   }
    browser.close()
 }
 scrape()
