@@ -1,4 +1,4 @@
-FROM node:slim 
+FROM node:14-alpine
 
 WORKDIR /usr/src/app
 
@@ -11,19 +11,23 @@ RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 
+# 安装最新版 Chromium(89) 的包
+RUN apk add --no-cache \
+      chromium \
+      nss \
+      freetype \
+      harfbuzz \
+      ca-certificates \
+      ttf-freefont \
+      nodejs \
+      yarn
+
+# 跳过自动安装 Chrome 包. 使用上面已经安装的 Chrome
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 RUN npm i puppeteer
 
-# We don't need the standalone Chromium
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-
-# Install Google Chrome Stable and fonts
-# Note: this installs the necessary libs to make the browser work with Puppeteer.
-RUN apt-get update && apt-get install curl gnupg -y \
-  && curl --location --silent https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-  && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-  && apt-get update \
-  && apt-get install google-chrome-stable -y --no-install-recommends \
-  && rm -rf /var/lib/apt/lists/*
 
 COPY . .
 
