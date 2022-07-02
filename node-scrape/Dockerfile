@@ -13,6 +13,11 @@ RUN npm install
 
 RUN npm i puppeteer
 
+RUN apk add --no-cache chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont nodejs yarn
+
+RUN PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+RUN PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 COPY . .
 
 EXPOSE 8080
