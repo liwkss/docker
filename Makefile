@@ -1,4 +1,4 @@
-target = sh3
+target = sh4
 
 rebuild:
 	git pull
