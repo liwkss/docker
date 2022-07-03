@@ -1,5 +1,7 @@
+target = sh1
+
 rebuild:
 	git pull
-	docker build sh1 -t sh1
-	docker run sh1
+	docker build $(target) -t $(target)
+	docker run $(target)
 	
