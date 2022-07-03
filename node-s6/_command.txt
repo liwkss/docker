@@ -1,3 +1,0 @@
-docker build . -t node-web-app
-docker run -d -p 49160:8080 node-web-app
-docker exec -it <contain-id> /bin/sh
