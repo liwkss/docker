@@ -1,0 +1,3 @@
+s3	puppeteer	413MB
+s4	cheerio94	94.5MB
+s5	JSDOM		135MB
