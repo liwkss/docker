@@ -1,4 +1,4 @@
-target = sh1
+target = sh2
 
 rebuild:
 	git pull
