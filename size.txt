@@ -1,3 +1,10 @@
 s3	puppeteer	413MB
 s4	cheerio94	94.5MB
 s5	JSDOM		135MB
+s6	puppeteer	373MB	alpine3.14	chrome93.0	puppeteer10.2.0
+s7	puppeteer	373MB	alpine3.16	chrome102.0	puppeteer14.0.0
+
+
+
+
+
