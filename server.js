@@ -24,7 +24,6 @@ scrape();
 const app = express();
 app.get('/', (req, res) => {
   res.send(ret);
-  scrape();
 });
 
 app.listen(8080, '0.0.0.0');
