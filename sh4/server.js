@@ -23,7 +23,7 @@ async function scrape() {
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send("ddd");
+  res.send(scrape());
 });
 
 app.listen(8080, '0.0.0.0');
