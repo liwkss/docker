@@ -1,19 +1,15 @@
-FROM alpine
+FROM node:12-alpine
 
-RUN apk add --no-cache \
-      chromium \
-      nss \
-      freetype \
-      harfbuzz \
-      ca-certificates \
-      ttf-freefont \
-      nodejs \
-      yarn
+WORKDIR /usr/src/app
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-RUN yarn add puppeteer@13.5.0
+RUN npm install 
+# If you are building your code for production
+# RUN npm ci --only=production
 
 COPY . .
 
