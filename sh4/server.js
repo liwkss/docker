@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer')
 const express = require('express');
 
+var ret="";
 
 async function scrape() {
-   var ret="";
+
    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage']})
    const page = await browser.newPage()
 
@@ -16,14 +17,13 @@ async function scrape() {
 	}
 
    browser.close()
-   return ret
 }
 
-
+scrape();
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send(scrape());
+  res.send(ret);
 });
 
 app.listen(8080, '0.0.0.0');
