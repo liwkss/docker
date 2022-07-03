@@ -15,6 +15,8 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 
 RUN yarn add puppeteer@10.2.0
 
+RUN yarn add express
+
 COPY . .
 
 EXPOSE 8080
