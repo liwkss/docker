@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer')
 const express = require('express');
 
-var ret="";
+
 
 async function scrape() {
    ret="";
@@ -17,14 +17,15 @@ async function scrape() {
 	}
 
    browser.close()
+   return ret;
 }
 
-scrape();
+
 
 const app = express();
-app.get('/', (req, res) => {
-  res.send(ret);
-  scrape();
+app.get('/', async(req, res) => {
+  res.send(await scrape());
+  
 });
 
 app.listen(8080, '0.0.0.0');
