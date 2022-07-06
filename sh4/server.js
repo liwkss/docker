@@ -24,7 +24,8 @@ async function scrape() {
 
 const app = express();
 app.get('/', async(req, res) => {
-  await res.send(scrape());
+  const ret=await scrape()
+  res.send(ret);
   
 });
 
