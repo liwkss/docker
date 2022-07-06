@@ -17,12 +17,10 @@ async function scrape() {
 	}
 
    browser.close()
-   console.log(ret)
    return ret;
 }
-scrape();
 
-/*
+
 const app = express();
 app.get('/', async(req, res) => {
   const ret=await scrape()
@@ -32,4 +30,3 @@ app.get('/', async(req, res) => {
 
 app.listen(8080, '0.0.0.0');
 
-*/
