@@ -4,7 +4,7 @@ const express = require('express');
 
 
 async function scrape() {
-   ret="";
+   var ret="";
    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage']})
    const page = await browser.newPage()
 
@@ -27,7 +27,7 @@ app.get('/', async(req, res) => {
   const ret=await scrape()
   res.send(ret);
   
-});
+})
 
 app.listen(8080, '0.0.0.0');
 
