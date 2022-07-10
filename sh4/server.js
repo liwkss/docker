@@ -1,10 +1,10 @@
 const puppeteer = require('puppeteer')
 const express = require('express');
 
-var ret="";
+
 
 async function scrape() {
-   ret="";
+   var ret="";
    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage']})
    const page = await browser.newPage()
 
@@ -17,14 +17,20 @@ async function scrape() {
 	}
 
    browser.close()
+   return ret;
 }
 
-scrape();
 
 const app = express();
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+  const ret=await scrape()
   res.send(ret);
+<<<<<<< HEAD
 });
+=======
+  
+})
+>>>>>>> 7e40bf0f6e4c25e7ec5c50bb4fbb800870ab73cc
 
 app.listen(8080, '0.0.0.0');
 
