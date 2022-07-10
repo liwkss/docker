@@ -15,7 +15,7 @@ async function scrape() {
 		console.log(text[2*i]+"\t"+text[2*i+1])
 		ret = ret+ text[2*i]+"\t"+text[2*i+1];
 	}
-
+   conosle.log("done");
    browser.close()
    return ret;
 }
