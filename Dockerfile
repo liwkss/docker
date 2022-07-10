@@ -13,9 +13,7 @@ RUN apk add --no-cache \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-RUN yarn add puppeteer@10.2.0
-
-RUN yarn add express
+RUN yarn add puppeteer@10.2.0 express
 
 COPY . .
 
