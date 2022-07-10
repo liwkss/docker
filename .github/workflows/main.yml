@@ -33,9 +33,9 @@ jobs:
           docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:latest
           
     # Push the Docker image to Heroku Container Registry
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'liwkss'
-          heroku_email: 'sb@gmail.com'
+    #  - name: Deploy to Heroku
+    #    uses: akhileshns/heroku-deploy@v3.12.12
+    #    with:
+    #      heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+    #      heroku_app_name: 'liwkss'
+    #      heroku_email: 'sb@gmail.com'
