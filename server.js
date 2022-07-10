@@ -25,12 +25,7 @@ const app = express();
 app.get('/', async(req, res) => {
   const ret=await scrape()
   res.send(ret);
-<<<<<<< HEAD
 });
-=======
-  
-})
->>>>>>> 7e40bf0f6e4c25e7ec5c50bb4fbb800870ab73cc
 
 app.listen(8080, '0.0.0.0');
 
