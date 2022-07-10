@@ -1,22 +1,14 @@
-FROM alpine:3.14
+FROM python:3-alpine
 
-RUN apk add --no-cache \
-      chromium \
-      nss \
-      freetype \
-      harfbuzz \
-      ca-certificates \
-      ttf-freefont \
-      nodejs \
-      yarn
+RUN mkdir -p /app
+WORKDIR /app
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN yarn add puppeteer@10.2.0 express
+COPY . /app
 
-COPY . .
+# Expose the Flask port
+EXPOSE 5000
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
-
+CMD [ "python", "./app.py" ]
