@@ -1,8 +1,36 @@
+				imgSize	ramUsage(peak)
 s3	puppeteer	413MB
 s4	cheerio94	94.5MB
 s5	JSDOM		135MB
-s6	puppeteer	373MB	alpine3.14	chrome93.0	puppeteer10.2.0
-s7	puppeteer	413MB	alpine3.16	chrome102.0	puppeteer14.0.0
+s6	puppeteer	373MB	200MB		alpine3.14	chrome93.0	puppeteer10.2.0
+s7	puppeteer	413MB				alpine3.16	chrome102.0	puppeteer14.0.0
+
+
+
+
+common command
+
+play with docker
+--------
+docker build -t sh4 .
+docker run -p 8080:8080 sh4 &
+
+docker login
+docker image tag myimage liwk/sh4
+docker push liwk/sh4
+
+docker stats
+docker ps -a
+
+docker rm -f container_ID
+
+docker run -p 8080:8080 liwk/sh4 &
+
+
+
+
+
+
 
 
 
