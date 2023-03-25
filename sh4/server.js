@@ -20,7 +20,7 @@ async function scrape() {
 		ret = ret+ text[2*i+1]+",";
 	}
 
-    browser.close()
+    await browser.close()
     return ret;
 }
 
