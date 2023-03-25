@@ -1,11 +1,17 @@
-const puppeteer = require('puppeteer-core')
+//const puppeteer = require('puppeteer-core')
 const express = require('express');
-
+const chromium = require('chrome-aws-lambda');
 
 
 async function scrape() {
    var ret="";
-   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage']})
+   const browser = await chromium.puppeteer.launch({
+      args: chromium.args,	  
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
+   })
    const page = await browser.newPage()
 
    await page.goto('https://www.hkab.org.hk/hibor/listRates.do?lang=en&Submit=Detail')
