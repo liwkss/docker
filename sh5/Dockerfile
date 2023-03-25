@@ -9,8 +9,7 @@ RUN apk add --no-cache \
       nodejs \
       yarn
 
-RUN yarn add puppeteer-core@10.1.0
-RUN yarn add chrome-aws-lambda@10.1.0
+RUN yarn add puppeteer-core@10.1.0 express chrome-aws-lambda@10.1.0
 
 COPY . .
 
