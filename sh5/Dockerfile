@@ -10,7 +10,7 @@ RUN apk add --no-cache \
       yarn
 
 RUN yarn add puppeteer-core@10.1.0 express chrome-aws-lambda@10.1.0
-RUN node node_modules/puppeteer/install.js
+RUN node node_modules/puppeteer-core/install.js
 COPY . .
 
 EXPOSE 8080
