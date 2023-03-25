@@ -28,6 +28,8 @@ docker run -p 8080:8080 liwk/sh4 &
 
 
 
+docker logout
+rm /root/.docker/config.json
 
 
 
