@@ -1,0 +1,6 @@
+total built size
+node 18	don't work
+node 16 dont' work?
+node 14 
+node 12	438MB
+
