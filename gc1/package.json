@@ -1,0 +1,8 @@
+{
+  "name": "sample-http",
+  "version": "0.0.1",
+  "dependencies": {
+    "puppeteer": "^19.8.2"
+  },
+  "gcp-build": "node node_modules/puppeteer/install.js"
+}
