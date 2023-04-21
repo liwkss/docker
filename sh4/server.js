@@ -10,7 +10,7 @@ async function scrape() {
 		browser = await puppeteer.launch({
 			headless: true,
 			ignoreHTTPSErrors: true,
-			args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-dev-shm-usage'],
+			args: ['--no-sandbox', '--no-zygote', '--disable-setuid-sandbox','--disable-dev-shm-usage'],
 		});
 		const page = await browser.newPage()
 
