@@ -1,18 +1,19 @@
 const puppeteer = require('puppeteer')
 const express = require('express');
 
+let browser;
 
 
 async function scrape() {
     var ret="";
-	let browser;
+	let page;
 	try{
-		browser = await puppeteer.launch({
+		if(!browser) browser = await puppeteer.launch({
 			headless: true,
 			ignoreHTTPSErrors: true,
-			args: ['--no-sandbox', '--no-zygote', '--disable-setuid-sandbox','--disable-dev-shm-usage'],
+			args: ['--no-first-run','--no-sandbox', '--no-zygote','--disable-accelerated-2d-canvas', '--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu'],
 		});
-		const page = await browser.newPage()
+		page = await browser.newPage()
 
 		await page.goto('https://www.hkab.org.hk/hibor/listRates.do?lang=en&Submit=Detail')
 
@@ -24,8 +25,8 @@ async function scrape() {
 	}catch(e){
 		console.log(e);
 	}finally{
-		if(browser){
-			await browser.close();
+		if(page){
+			await page.close();
 		}
 	}
     return ret;
