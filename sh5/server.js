@@ -18,10 +18,10 @@ async function scrape() {
 		await page.goto('https://www.hkab.org.hk/en/rates/hibor')
 
 		const text = await page.evaluate(() => Array.from(document.querySelectorAll("#__nuxt > div > main > div.section_container.for_hibor > div > div > div:nth-child(1) > div > div > div.general_table_cell.last > div"), element => element.textContent));
-		for(var i=0;i<text.length/2;i++){
+		for(var i=1;i<text.length;i++){
 			console.log(text[i]);
 			//console.log(text[2*i]+"\t"+text[2*i+1])
-			ret = ret+ text[2*i+1]+",";
+			ret = ret+ text[i]+",";
 		}
 	}catch(e){
 		console.log(e);
