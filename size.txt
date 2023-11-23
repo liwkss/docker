@@ -36,7 +36,7 @@ rm /root/.docker/config.json
 
 docker restart upbeat_dhawan
 
-docker run --memory 900m --memory-swap 900m -p 41940:8080 liwk/sh4 &
+docker run -d -p 41940:8080 liwk/sh4 
 google IAP 35.235.240.0/20
 cos-update-strategy=update_disabled
 
