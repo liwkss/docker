@@ -1,0 +1,111 @@
+html, body {
+  height: 100%;
+}
+
+body #wrap
+{
+	min-height: 100%;
+	height: auto;	
+}
+
+body #wrap .container
+{
+	max-width:1280px;
+	width:1280px;
+	margin:auto;
+	margin: 0 auto;
+}
+
+img, table
+{
+	border:0;
+}
+
+img{
+	vertical-align:middle;
+	max-width: 100%;
+}
+
+table, div
+{
+	border-collapse:collapse;
+	/*text-align:left;*/
+	vertical-align: top;
+}
+
+table{
+	width:100%;
+}
+
+.clearBoth
+{
+	clear:both;
+}
+
+body .disNone
+{
+	display:none;
+}
+
+body a {
+	
+}
+
+.nowrap, .noWrap{
+	white-space: nowrap;
+}
+
+body #fontSize0{font-size:14px;}
+body #fontSize1{font-size:18px;}
+body #fontSize2{font-size:24px;}
+
+.access
+{
+	position:absolute;
+	/*visibility:hidden;*/
+	left: -9999px;
+}
+
+#page_bg {
+	color: #000;
+}
+
+.disIB
+{
+	display:inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.nobr
+{
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+	margin: 0;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+html, body
+{
+	margin:0;
+	padding:0;
+}
+
+a, a:link, a:active, a:visited{text-decoration:none;}
+a:hover, a:focus{text-decoration:underline;}
+
+body .bold
+{
+	font-weight:bold;
+}
+
+/*========Index==========*/
+body.indexVersion{}
+/*body.indexVersion .breadcrumb, body.indexVersion  .printTool{display:none;}*/
+body.indexVersion .mainHeader{position:absolute; display:hidden; left: -9999px;}
+/*========Chinese========*/
+body.chineseVersion{}
+/**/
+
